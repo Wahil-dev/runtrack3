@@ -25,3 +25,25 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+
+<div class="container-imgs flex-r">
+        <div class="img-box">
+            <img src="img/arc1.png" alt="">
+        </div>
+        <div class="img-box">
+            <img src="img/arc2.png" alt="">
+        </div>
+        <div class="img-box">
+            <img src="img/arc3.png" alt="">
+        </div>
+        <div class="img-box">
+            <img src="img/arc4.png" alt="">
+        </div>
+        <div class="img-box">
+            <img src="img/arc5.png" alt="">
+        </div>
+        <div class="img-box">
+            <img src="img/arc6.png" alt="">
+        </div>
+    </div>
