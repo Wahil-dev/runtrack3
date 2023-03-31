@@ -1,9 +1,18 @@
-var text = $("#text");
-$("#button").on("click", () => {
-    text.addClass("afficher")
-})
+let text = $("#text");
+// $("#show").on("click", () => {
+//     text.addClass("afficher")
+// })
 
-$("#reset").on('click', () => {
-    //text.removeClass("afficher");
-    document.write("")
+// $("#hide").on('click', () => {
+//     //text.removeClass("afficher");
+//     document.write("")
+// })
+
+$(function() {
+    $("#show").click(() => {
+        text.show();
+    })
+    $("#hide").click(() => {
+        text.hide();
+    })
 })

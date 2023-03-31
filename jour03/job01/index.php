@@ -18,8 +18,8 @@
     <p id="text" class=''>
         Les logiciels et les cathédrales, c'est un peu la même chose - d'abord on les construit ensuite on prie
     </p>
-    <button id="button">click</button>
-    <button id="reset">reset</button>
+    <button id="show">afficher</button>
+    <button id="hide">hide</button>
 
     <script src="../../jquery.js"></script>
     <script src="script.js"></script>
