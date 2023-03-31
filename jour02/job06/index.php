@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="body">
-    <footer id="footer"></footer>
+    <footer id="footer" class="b show"></footer>
     <script src="script.js"></script>
 </body>
 </html>
