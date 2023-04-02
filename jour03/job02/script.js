@@ -55,7 +55,7 @@ for(let i = 1; i < 7; i++) {
                     container.append(msg);
                     console.log("<p>Vous avez gagné</p>")
                 } else {
-                    msg = $("<p>Vous avez gagné</p>").css({color: 'red'});
+                    msg = $("<p>Vous avez perdu</p>").css({color: 'red'});
                     container.append(msg);
                     console.log("<p>Vous avez perdu</p>")
                 }
@@ -72,6 +72,7 @@ function isWin() {
 
         //if currentImage.id != i 
         if(currentOrder[i-1].id != i) {
+            console.log("perdue")
             return false;
         }
     }
