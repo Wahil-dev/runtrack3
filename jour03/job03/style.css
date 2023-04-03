@@ -14,7 +14,7 @@
 .flex-r {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -26,10 +26,13 @@
     border: 2px solid black;
 }
 
+.container-imgs .box-img {
+    width: 50%;
+    height: 50%;
+    text-align: center;    
+}
+
 .container-imgs img {
-    width: 33.33%;
-    height: 33.33%;
-    text-align: center;
-    background-color: red;
-    
+    width: 100%;
+
 }
