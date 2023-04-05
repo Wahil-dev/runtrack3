@@ -2,11 +2,14 @@ let containerImages = document.querySelector(".container-imgs");
 let msg = document.querySelector(".msg");
 const restartBtn = document.querySelector("#restartBtn");
 
-//const images = ["logo1", "logo2", "logo3", "logo4", "logo5", "logo6", "logo7", "logo8", "logo9"];
-const images = [
-    ["morceaux-1", "morceaux-2"], 
-    ["morceaux-3", "morceaux-4"]
+const images = [["logo1", "logo4", "logo7"],
+    ["logo2", "logo5", "logo8"], 
+    ["logo3", "logo6", "logo9"]
 ];
+// const images = [
+//     ["morceaux-1", "morceaux-2"], 
+//     ["morceaux-3", "morceaux-4"]
+// ];
 let imagesCopy;
 let imageRemoved = images[0][0];
 let start = false;
@@ -50,7 +53,7 @@ function drawImage() {
         for(let x = 0; x < images[y].length; x++) {
             let image = `
                 <div class="flex-r box-img">
-                    <img class="flex-r img" src="img/imageonline/${images[y][x]}.png" id="${images[y][x]}" alt="${images[y][x]}">
+                    <img class="flex-r img" src="img/${images[y][x]}.png" id="${images[y][x]}" alt="${images[y][x]}">
                 </div>
             `;
             containerImages.innerHTML += image;
@@ -81,7 +84,7 @@ function uploadImage() {
             if(imagesCopy[i][j] != "") {
                 let image = `
                     <div class="flex-r box-img">
-                        <img class="flex-r img" src="img/imageonline/${imagesCopy[i][j]}.png" id="${imagesCopy[i][j]}" alt="${imagesCopy[i][j]}">
+                        <img class="flex-r img" src="img/${imagesCopy[i][j]}.png" id="${imagesCopy[i][j]}" alt="${imagesCopy[i][j]}">
                     </div>
                 `;
                 containerImages.innerHTML += image;

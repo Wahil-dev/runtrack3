@@ -9,8 +9,10 @@
 </head>
 <body id="body">
     <div class="container">
-        <button id="restartBtn">restart</button>
-        <span class="msg hidden">partie terminer !</span>
+        <div class="content flex-c">
+            <button id="restartBtn">restart</button>
+            <span class="msg hidden">partie terminer !</span>
+        </div>
 
         <div class="container-imgs flex-r">
         </div>
