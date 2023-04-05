@@ -9,7 +9,7 @@
 </head>
 <body id="body">
     <div class="container">
-        <button id="recommencer">recommencer</button>
+        <button id="restartBtn">restart</button>
         <span class="error-game">partie terminer !</span>
 
         <div class="container-imgs flex-r">
