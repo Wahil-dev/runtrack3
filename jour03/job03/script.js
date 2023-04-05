@@ -8,7 +8,6 @@ const images = [
     ["morceaux-3", "morceaux-4"]
 ];
 let imagesCopy;
-let firstClick = 0;
 let imageRemoved = images[0][0];
 let start = false;
 let indexOfImageClicked = []
@@ -46,6 +45,7 @@ containerImages.addEventListener("click", (e) => {
 })
 
 function drawImage() {
+    containerImages.innerHTML = "";
     for(let y = 0; y < images.length; y++) {
         for(let x = 0; x < images[y].length; x++) {
             let image = `
@@ -135,3 +135,9 @@ const isWin = () => {
     }
     return true;
 }
+
+const restart = restartBtn.addEventListener("click", () => {
+    start = false;
+    images[0][0] = imageRemoved;
+    drawImage()
+})
