@@ -13,7 +13,7 @@
         <span class="error-game">partie terminer !</span>
 
         <div class="container-imgs flex-r">
-            <div class="box-img">
+            <!-- <div class="box-img">
             </div>
             <div class="box-img">
                 <img class="flex-r" src="img/imageonline/morceaux-2.png" id="morceaux-2" alt="2">
@@ -23,7 +23,7 @@
             </div>
             <div class="box-img">
                 <img class="flex-r" src="img/imageonline/morceaux-4.png" id="morceaux-4" alt="4">
-            </div>
+            </div> -->
         </div>
     </div>
 
