@@ -1,4 +1,5 @@
 let containerImages = document.querySelector(".container-imgs");
+let msg = document.querySelector(".msg");
 const restartBtn = document.querySelector("#restartBtn");
 
 //const images = ["logo1", "logo2", "logo3", "logo4", "logo5", "logo6", "logo7", "logo8", "logo9"];
@@ -69,8 +70,8 @@ function moveImage(e, indexOfImageClicked) {
     // Check if win
     if(isWin()) {
         imagesCopy[0][0] = imageRemoved;
+        msg.style.display = "block";
     }
-
 }
 
 function uploadImage() {
@@ -111,8 +112,6 @@ function aroundIsEmpty(imageClicked) {
     } 
 
     if(y+1 in images) {
-        console.log("imagesCopy", imagesCopy)
-
         if(imagesCopy[y+1][x] == "") {
             return true;
         } 
