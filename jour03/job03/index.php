@@ -10,7 +10,8 @@
 <body id="body">
     <div class="container">
         <div class="content flex-c">
-            <button id="restartBtn">restart</button>
+            <button class="btn" id="restartBtn">restart</button>
+            <button class="btn" id="next">next</button>
             <span class="msg hidden">partie terminer !</span>
         </div>
 

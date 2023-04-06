@@ -4,7 +4,8 @@
     box-sizing: border-box;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-#restartBtn {
+
+.btn {
     text-align: center;
     margin: 10px auto;
     padding: 10px 20px;
@@ -39,11 +40,11 @@
     border: 2px solid black;
 }
 
-.container-imgs .box-img {
+/* .container-imgs .box-img {
     width: 150px;
     height: 150px;
     text-align: center;    
-}
+} */
 
 .container-imgs img {
     width: 100%;
