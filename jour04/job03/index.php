@@ -13,15 +13,27 @@
             <input type="text" id="id" name="name">
             <input type="text" id="nom" name="name">
             <select name="type" id="type">
-                <option value="default" default>choisi un type</option>
+                <option value="" default>choisi un type</option>
             </select>
 
             <button id="filtrer">filtrer</button>
         </form>
 
-        <div class="result">
+        <table class="result" border="2px">
+            <thead>
+                <tr>ID</tr>
+                <tr>Name</tr>
+                <tr>Type</tr>
+                <tr>Attack</tr>
+                <tr>Defense</tr>
+                <tr>Sp. Attack</tr>
+                <tr>Sp. Defense</tr>
+                <tr>Speed</tr>
+            </thead>
+            <tbody id="tbody">
 
-        </div>
+            </tbody>
+        </table>
     </div>
 
     <script src="../../jquery.js"></script>
