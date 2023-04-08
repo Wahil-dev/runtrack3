@@ -6,7 +6,7 @@ const nom = document.querySelector("#nom");
 const selectType = document.querySelector("#type");
 
 let typesList = [];
-let player;
+let pokemon;
 //get types
 fetch("pokemon.json")
 .then(response => response.json())
@@ -15,13 +15,13 @@ fetch("pokemon.json")
 const filterData = (data) => {
     tbody.innerHTML = "";
     for(let i = 0; i < data.length; i++) {
-        player = `
-        <tr class="player-box">
+        pokemon = `
+        <tr class="pokemon-box">
             <td>${data[i].id}</td>
             <td>${data[i].name["english"]}</td>
             <td>${data[i]["type"][0]}</td>
             <td>${data[i]["base"]["Attack"]}</td>
-            <td>${data[i]["base"]["Defense"]}</td>
+            <td>${data[i]["base"]["DefensNamee"]}</td>
             <td>${data[i]["base"]["Sp. Attack"]}</td>
             <td>${data[i]["base"]["Sp. Defense"]}</td>
             <td>${data[i]["base"]["Speed"]}</td>
@@ -31,14 +31,14 @@ const filterData = (data) => {
         if(id.value != "" && nom.value != "" && selectType.value != "" && selectType.value != "") {
             //utiliser le type que l'utilisateur a entrer
             if(id.value == data[i]["id"] && includes(data[i]["name"], nom.value) && data[i]["type"].includes(selectType.value)) {
-                tbody.innerHTML += player;
+                tbody.innerHTML += pokemon;
             }
         } 
         
         //ID and Name
         else if(id.value != "" && nom.value != "") {
             if(id.value == data[i]["id"] && includes(data[i]["name"], nom.value)) {
-                tbody.innerHTML += player;
+                tbody.innerHTML += pokemon;
             }
         } 
 
@@ -46,7 +46,7 @@ const filterData = (data) => {
         else if(id.value != "" && selectType.value != "") {
             //utiliser le type que l'utilisateur a entrer
             if(id.value == data[i]["id"] && data[i]["type"].includes(selectType.value)) {
-                tbody.innerHTML += player;
+                tbody.innerHTML += pokemon;
             }
         } 
 
@@ -54,33 +54,33 @@ const filterData = (data) => {
         else if(nom.value != "" && selectType.value != "") {
             //utiliser le type que l'utilisateur a entrer
             if(nom.value == data[i]["nom"] && data[i]["type"].includes(selectType.value)) {
-                tbody.innerHTML += player;
+                tbody.innerHTML += pokemon;
             }
         } 
 
         //id
         else if(id.value != "") {
             if(id.value == data[i]["id"]) {
-                tbody.innerHTML += player;
+                tbody.innerHTML += pokemon;
             }
         } 
 
         //name
         else if(nom.value != "") {
             if(includes(data[i]["name"], nom.value)) {
-                tbody.innerHTML += player;
+                tbody.innerHTML += pokemon;
             }
         } 
 
         //type
         else if(selectType.value != "") {
             if(data[i]["type"].includes(selectType.value)) {
-                tbody.innerHTML += player;
+                tbody.innerHTML += pokemon;
             }
         } 
 
         else {
-            tbody.innerHTML += player;
+            tbody.innerHTML += pokemon;
         }
     }
 }
