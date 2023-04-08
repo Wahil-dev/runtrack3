@@ -15,14 +15,12 @@ fetch("pokemon.json")
 const filterData = (data) => {
     tbody.innerHTML = "";
     for(let i = 0; i < data.length; i++) {
-        let type = data[i]["type"][0];
-        let name = data[i].name["english"];
         player = `
         <tr class="player-box">
             <td>${data[i].id}</td>
-            <td>${name}</td>
-            <td>${type}</td>
-            <td>${data[i]["base"]["attack"]}</td>
+            <td>${data[i].name["english"]}</td>
+            <td>${data[i]["type"][0]}</td>
+            <td>${data[i]["base"]["Attack"]}</td>
             <td>${data[i]["base"]["Defense"]}</td>
             <td>${data[i]["base"]["Sp. Attack"]}</td>
             <td>${data[i]["base"]["Sp. Defense"]}</td>
@@ -33,14 +31,13 @@ const filterData = (data) => {
         if(id.value != "" && nom.value != "" && selectType.value != "" && selectType.value != "") {
             //utiliser le type que l'utilisateur a entrer
             if(id.value == data[i]["id"] && includes(data[i]["name"], nom.value) && data[i]["type"].includes(selectType.value)) {
-                type = selectType.value;
                 tbody.innerHTML += player;
             }
         } 
         
         //ID and Name
         else if(id.value != "" && nom.value != "") {
-            if(id.value == data[i]["id"] && nom.value == data[i]["name"]) {
+            if(id.value == data[i]["id"] && includes(data[i]["name"], nom.value)) {
                 tbody.innerHTML += player;
             }
         } 
@@ -49,7 +46,6 @@ const filterData = (data) => {
         else if(id.value != "" && selectType.value != "") {
             //utiliser le type que l'utilisateur a entrer
             if(id.value == data[i]["id"] && data[i]["type"].includes(selectType.value)) {
-                type = selectType.value;
                 tbody.innerHTML += player;
             }
         } 
@@ -58,7 +54,6 @@ const filterData = (data) => {
         else if(nom.value != "" && selectType.value != "") {
             //utiliser le type que l'utilisateur a entrer
             if(nom.value == data[i]["nom"] && data[i]["type"].includes(selectType.value)) {
-                type = selectType.value;
                 tbody.innerHTML += player;
             }
         } 
@@ -79,8 +74,6 @@ const filterData = (data) => {
 
         //type
         else if(selectType.value != "") {
-            console.log(selectType.value, data[i]["type"])
-            console.log(data[i]["type"].includes(selectType.value))
             if(data[i]["type"].includes(selectType.value)) {
                 tbody.innerHTML += player;
             }
@@ -117,8 +110,7 @@ const getType = (data) => {
 }
 
 const includes = (object, name) => {
-    console.log(object)
-    for(const [key, value] in Object.entries(object)) {
+    for(const [key, value] of Object.entries(object)) {
         if(value == name) {
             return true;
         }
