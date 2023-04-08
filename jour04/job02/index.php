@@ -7,9 +7,6 @@
     <title>job01</title>
 </head>
 <body>
-    <p id="text" class=''></p>
-    <button id="button">afficher</button>
-
     <script src="../../jquery.js"></script>
     <script src="script.js"></script>
 </body>
