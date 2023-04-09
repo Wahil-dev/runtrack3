@@ -21,14 +21,14 @@
 
         <table class="result" border="2px">
             <thead>
-                <tr>ID</tr>
-                <tr>Name</tr>
-                <tr>Type</tr>
-                <tr>Attack</tr>
-                <tr>Defense</tr>
-                <tr>Sp. Attack</tr>
-                <tr>Sp. Defense</tr>
-                <tr>Speed</tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Attack</th>
+                <th>Defense</th>
+                <th>Sp. Attack</th>
+                <th>Sp. Defense</th>
+                <th>Speed</th>
             </thead>
             <tbody id="tbody">
 
