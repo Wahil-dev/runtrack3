@@ -10,9 +10,12 @@
         private $tb_name = "utilisateurs";
         private $user_info = [];
         private $isConnected = false;
+        private $db;
         
         public function __construct()
         {
+            global $db;
+            $this->db = $db;
             var_dump(self::getUserById(35));
             if(isset($_SESSION["id"])) {
                 $this->user_info = self::getUserById($_SESSION["id"]);
@@ -20,9 +23,8 @@
         }
 
         public function connect($email, $password) {
-            global $db;
             $sql = "SELECT * FROM ".$this->tb_name . " WHERE email = ? && password = ?";
-            $req = $db->prepare($sql);
+            $req = $this->db->prepare($sql);
             $req->execute([$email, $password]);
             //check if user exist
             if($req->rowCount() == 1) {
@@ -35,14 +37,41 @@
         }
 
 
+        public function getUserId() {
+            return $this->user_info->id;
+        }
+
+
         public function getUserName() {
             return $this->user_info->nom;
         }
 
+        public function setUserName($new_username) {
+            $user_id = $this->getUserId();
+            $sql = "UPDATE " . $this->tb_name . " SET nom = ? WHERE id = ?";
+            $req = $this->db->prepare($sql);
+            $req->execute([$new_username, $user_id]);
+            if($req) {
+                return true;
+            }
+            return false;
+        }
+
+        public function getIsConnected()
+        {
+            return $this->isConnected;
+        }
+
+        public function setIsConnected($isConnected): self
+        {
+            $this->isConnected = $isConnected;
+            return $this;
+        }
 
 
         /* --------------------- Static Methods --------------------- */
-        private static function getUserById($id) {
+        private static function getUserById($id)
+        {
             global $db;
             $sql = "SELECT * FROM " . self::TABLE_NAME . " WHERE id = ?";
             $req = $db->prepare($sql);
@@ -51,10 +80,12 @@
 
             return $res;
         }
+
     }
 
     $user = new User();
 
     $email = "wahil@gmail.com";
     $password = "bvb";
-    var_dump($user->connect($email, $password));
+    $user->connect($email, $password);
+    //$user->setUserName("chettouf");
