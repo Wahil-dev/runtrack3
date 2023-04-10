@@ -17,8 +17,15 @@
             global $db;
             $this->db = $db;
             if(isset($_SESSION["id"])) {
-                $this->user_info = self::getUserById($_SESSION["id"]);
-                $this->isConnected = true;
+                $user_info = self::getUserById($_SESSION["id"]);
+                if(!is_null($user_info)) {
+                    $this->user_info = $user_info;
+                    $this->isConnected = true;
+                    var_dump("user trouver !");
+                } else {
+                    $this->isConnected = false;
+                    var_dump("user n'est pas trouver !");
+                }
             }
         }
 
@@ -32,8 +39,10 @@
                 $this->user_info = $res;
                 $_SESSION["id"] = $res->id;
                 $this->isConnected = true;
+                var_dump("user trouver est connecter");
                 return true;
             }
+            var_dump("user n'est pas trouver !");
             return false;
         }
 
@@ -133,10 +142,19 @@
             return $this->isConnected;
         }
 
-        public function setIsConnected($isConnected): self
-        {
-            $this->isConnected = $isConnected;
-            return $this;
+        public function disconnect() {
+            unset($_SESSION["id"]);
+        }
+
+        public function delete() {
+            $user_id = $this->getUserId();
+            $sql = "DELETE FROM ".$this->tb_name." WHERE id = $user_id";
+            $req = $this->db->query($sql);
+            $req->execute();
+            if($req) {
+                return true; //user bien supprimer
+            }
+            return false; //user n'est pas supprimer / error
         }
 
 
@@ -149,7 +167,10 @@
             $req->execute([$id]);
             $res = $req->fetchObject();
 
-            return $res;
+            if($req->rowCount() == 1) {
+                return $res;
+            }
+            return null;
         }
 
         private static function emailExist($email) {
@@ -172,14 +193,15 @@
     $nom = "bvb";
     $prenom = "bvbbvb";
     //unset($_SESSION["id"]);
-    //unset($_SESSION["emailErr"]);
     //var_dump($_SESSION);
-    $user->connect($email, $password);
+    //$user->connect($email, $password);
     //$user->setUserName("chettouf");
 
     //var_dump($user->register($nom, $prenom, $email, $password));
 
     if($user->isConnected()) {
+        //$user->disconnect();
+        //$user->delete();
         var_dump($user->getAllInfo());
         //$user->setEmail("s@gmail.com");
     } else {
