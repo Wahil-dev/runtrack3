@@ -16,7 +16,9 @@
                     <p class="info"><span>Prenom :</span><?= $user->getPrenom()?></p>
                     <p class="info"><span>Email :</span><?= $user->getEmail()?></p>
                     <p class="info"><span>Password :</span><?= $user->getPassword()?></p>
+                    <button class="delete-btn" id="delete">Supprimer</button>
                 </div>
+                <script type="module" src="assets/js/script.js"></script>
             <?php endif ?>
         </section>
     </div>

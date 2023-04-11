@@ -75,6 +75,17 @@ header .menu a:hover {
     gap: 9px;
 }
 
+
+.container .content .box-info .delete-btn  {
+    padding: 10px 15px;
+    background-color: rgb(255, 128, 0);
+    color: rgb(255, 255, 255);
+    display: block;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
 .container .content .box-info .info span {
     color: rgb(15, 84, 130);
 }
@@ -109,7 +120,7 @@ header .menu a:hover {
     -o-border-radius: 5px;
 }
 
-.form .btn {
+.btn {
     padding: 10px 15px;
     border-radius: 5px;
     -webkit-border-radius: 5px;
