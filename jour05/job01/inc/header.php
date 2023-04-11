@@ -6,7 +6,7 @@
         <p class="">Bonjour <?= $user->getUserName()?></p>
         <nav class="nav">
             <ul class="menu">
-                <button id="disconnect">déconnexion</button>
+                <li><a href="inc/disconnect.php">déconnexion</a></li>
             </ul>
         </nav>
     <?php else : ?>
