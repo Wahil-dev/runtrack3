@@ -50,6 +50,34 @@ header {
     background-color: aquamarine;
 }
 
+header .menu {
+    gap: 10px;
+    font-size: clamp(.7rem, .9rem, 4.5vw);
+}
+
+header .menu a {
+    color: black;
+}
+
+header .menu a:hover {
+    color: rgb(209, 44, 44);
+}
+
+
+.container .content {
+    align-items: flex-start;
+    gap: 15px;
+    font-size: clamp(.7rem, .9rem, 4.5vw);
+}
+
+.container .content .box-info {
+    align-items: flex-start;
+    gap: 9px;
+}
+
+.container .content .box-info .info span {
+    color: rgb(15, 84, 130);
+}
 
 /* ---------------------- Form Style ----------------------- */
 .form {

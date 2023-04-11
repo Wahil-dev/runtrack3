@@ -10,6 +10,6 @@ fetch("inc/api/user.php")
 });
 
 
-const process_data = (data) => {
-    username.textContent = " " + data.nom;
+const process_data = (user) => {
+    username.textContent = ` ${user.nom} ${user.prenom}`;
 }

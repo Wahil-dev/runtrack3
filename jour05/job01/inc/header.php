@@ -12,7 +12,7 @@
             </nav>
         <?php else : ?>
             <nav class="nav">
-                <ul class="menu">
+                <ul class="menu flex-r">
                     <li><a href="connexion.php">connexion</a></li>
                     <li><a href="inscription.php">inscription</a></li>
                 </ul>

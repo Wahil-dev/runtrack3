@@ -154,7 +154,13 @@
             }
             return false; //user n'est pas supprimer / error
         }
-
+        
+        public function redirectIfIsConnect() {
+            if($this->isConnected()) {
+                header("location: index.php");
+                exit();
+            }
+        }
 
         /* --------------------- Static Methods --------------------- */
         private static function getUserById($id)

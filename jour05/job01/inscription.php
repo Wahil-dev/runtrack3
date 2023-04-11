@@ -1,5 +1,7 @@
 <?php
+    require_once("inc/classes/User.php");
     require_once("inc/head.php");
+    $user->redirectIfIsConnect();
 ?>
 
     <div class="container flex-r">
@@ -27,4 +29,4 @@
         </form>
     </div>
 
-    <script src="assets/js/inscr.js"></script>
+    <script type="module" src="assets/js/inscr.js"></script>

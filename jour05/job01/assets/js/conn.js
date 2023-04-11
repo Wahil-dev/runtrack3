@@ -68,7 +68,7 @@ const processResponse = (jsonData) => {
         loginResMsg.textContent = jsonData[loginResponse];
         loginResMsg.style.display = "block";
         if(jsonData[loginResponse] == "connexion réussie") {
-            setTimeout(auth.moveToIndex, 400);
+            setTimeout(auth.moveToIndex, 300);
         }
 
         emailErrMsg.style.display = "none";

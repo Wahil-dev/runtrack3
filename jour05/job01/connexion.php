@@ -1,5 +1,7 @@
 <?php
+    require_once("inc/classes/User.php");
     require_once("inc/head.php");
+    $user->redirectIfIsConnect();
 ?>
 
     <div class="container flex-r">
