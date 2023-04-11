@@ -152,6 +152,7 @@
             $req = $this->db->query($sql);
             $req->execute();
             if($req) {
+                $this->disconnect();
                 return true; //user bien supprimer
             }
             return false; //user n'est pas supprimer / error
@@ -202,8 +203,8 @@
     if($user->isConnected()) {
         //$user->disconnect();
         //$user->delete();
-        var_dump($user->getAllInfo());
+        //var_dump($user->getAllInfo());
         //$user->setEmail("s@gmail.com");
     } else {
-        var_dump("vous etez pas connecter");
+        //var_dump("vous etez pas connecter");
     }
