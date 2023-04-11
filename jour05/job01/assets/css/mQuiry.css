@@ -1,5 +1,5 @@
 @media only screen and (max-width: 1200px) {
-    .container {
+    .container, .container-header {
         max-width: 992px;
         width: 992px;
     }
@@ -8,7 +8,7 @@
 
 
 @media only screen and (max-width: 992px) {
-    .container {
+    .container, .container-header {
         max-width: 768px;
         width: 768px;
     }
@@ -17,7 +17,7 @@
 
 
 @media only screen and (max-width: 768px) {
-    .container {
+    .container, .container-header {
         max-width: 556px;
         width: 556px;
     }
@@ -27,7 +27,7 @@
 
 
 @media only screen and (max-width: 556px) {
-    .container {
+    .container, .container-header {
         max-width: 100%;
         width: 100%;
     }

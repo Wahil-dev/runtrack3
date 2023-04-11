@@ -15,5 +15,4 @@
         </form>
     </div>
 
-    <script src="assets/js/conn.js"></script>
-    <?php require_once("inc/footer.php"); ?>
+    <script type="module" src="assets/js/conn.js"></script>

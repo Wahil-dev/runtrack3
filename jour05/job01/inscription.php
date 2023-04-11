@@ -28,4 +28,3 @@
     </div>
 
     <script src="assets/js/inscr.js"></script>
-    <?php require_once("inc/footer.php"); ?>

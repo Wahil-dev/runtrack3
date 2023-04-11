@@ -1,8 +1,15 @@
+const username = document.querySelector("#username");
 
-const moveToIndex = () => {
-    window.location.href = "index.php";
-}
+//___________________________ Get userData
+fetch("inc/api/user.php")
+.then(response => response.json())
+.then(jsonData => {
+    if(jsonData != "false") {
+        process_data(jsonData);
+    }
+});
 
-const moveToConnection = () => {
-    window.location.href = "connexion.php";
+
+const process_data = (data) => {
+    username.textContent = " " + data.nom;
 }
