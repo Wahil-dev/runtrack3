@@ -39,10 +39,8 @@
                 $this->user_info = $res;
                 $_SESSION["id"] = $res->id;
                 $this->isConnected = true;
-                var_dump("user trouver est connecter");
                 return true;
             }
-            var_dump("user n'est pas trouver !");
             return false;
         }
 

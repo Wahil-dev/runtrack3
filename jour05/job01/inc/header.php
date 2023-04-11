@@ -4,6 +4,11 @@
     <h1>Job01->jour05</h1>
     <?php if(isset($_SESSION["id"])) : ?>
         <p class="">Bonjour <?= $user->getUserName()?></p>
+        <nav class="nav">
+            <ul class="menu">
+                <button id="disconnect">déconnexion</button>
+            </ul>
+        </nav>
     <?php else : ?>
         <nav class="nav">
             <ul class="menu">
