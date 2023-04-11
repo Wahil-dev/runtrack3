@@ -23,7 +23,8 @@
                     $this->isConnected = true;
                 } else {
                     $this->isConnected = false;
-                    var_dump("user n'est pas trouver !");
+                    $this->disconnect();
+                    //var_dump("user n'est pas trouver !");
                 }
             }
         }

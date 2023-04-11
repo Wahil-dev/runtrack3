@@ -16,7 +16,6 @@ connexionForm.addEventListener("submit", (event) => {
     //______________________________ Email Vérification
     let [emailErr, passwordErr] = ["", ""];
 
-    console.log(emailErr, passwordErr)
     if(email != "") {
         if(!auth.validateEmail(email)) {
             emailErr = "entrer un bon email !";
@@ -55,7 +54,7 @@ connexionForm.addEventListener("submit", (event) => {
 //loginResponse
 
 const processResponse = (jsonData) => {
-    console.trace();
+    //console.trace();
     let loginResponse = "loginResponse";
     let emailErr = "emailErr";
     let passwordErr = "passwordErr";

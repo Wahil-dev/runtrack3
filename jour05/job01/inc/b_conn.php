@@ -7,6 +7,8 @@
         $email = $password = "";
         $emailErr = $passwordErr = "";
         $loginResponse = "";
+
+        //var_dump($_POST);
     
         //__________________ Email vérification
         if(isset($_POST["email"]) && $_POST["email"] != "") {

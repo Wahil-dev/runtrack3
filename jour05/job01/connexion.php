@@ -7,9 +7,11 @@
     <div class="container flex-r">
         <form id="connexionForm" class="form">
             <span class="err-msg" id="loginResponse"></span>
-            <input type='email' name="email" id="email" class="inp" placeholder="Email">
+
+            <input type='email' name="email" id="email" class="inp" placeholder="Email" required>
             <span class="err-msg" id="emailErr"></span>
-            <input type='password' name="password" id="password" class="inp" placeholder="Password">
+
+            <input type='password' name="password" id="password" class="inp" placeholder="Password" required>
             <span class="err-msg" id="passwordErr"></span>
 
             <button type="submit" id="connexion" class="btn">connexion</button>
