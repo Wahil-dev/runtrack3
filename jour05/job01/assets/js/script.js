@@ -1,24 +1,18 @@
-const update = document.querySelector("#update");
-const tbody = document.querySelector("#tbody");
+const connexionForm = document.querySelector("#connexionForm");
 
-update.addEventListener("click", () => {
-    fetch("users.php")
-    .then(response => response.json())
-    .then(users => printUsers(users))
+connexionForm.addEventListener("submit", (event) => {
+    // Empêche la soumission par défaut du formulaire
+    event.preventDefault();
+
+    const formData = new FormData(connexionForm);
+
+    fetch("inc/b_conn.php", {
+        method: "POST", 
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => console.log(data))
+    .catch(error => {
+        console.error(error);
+    })
 })
-
-const printUsers = (data) => {
-    tbody.innerHTML = "";
-    for(let i = 0; i < data.length; i++) {
-        user = `
-        <tr class="content-box">
-            <td>${data[i].id}</td>
-            <td>${data[i].nom}</td>
-            <td>${data[i].prenom}</td>
-            <td>${data[i].email}</td>
-        </tr>
-        `
-
-        tbody.innerHTML += user;
-    }
-}
