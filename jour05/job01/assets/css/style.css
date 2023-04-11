@@ -28,6 +28,11 @@ li {list-style: none;} a {text-decoration: none;}
     color: red;
 }
 
+.box-msg {
+    padding-top: 10px;
+    font-size: clamp(.7rem, .8rem, 4.5vw);
+}
+
 .container {
     width: 1140px;
     height: 100vh;
@@ -60,6 +65,11 @@ li {list-style: none;} a {text-decoration: none;}
     font-size: clamp(.8rem, .9rem, 4.5vw);
     outline: none;
     border: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 
 .form .btn {
@@ -78,4 +88,8 @@ li {list-style: none;} a {text-decoration: none;}
 
 .form button.btn {
     float: right;
+}
+
+.form button.btn:hover {
+    background-color: rgba(79, 210, 79, 0.653);
 }

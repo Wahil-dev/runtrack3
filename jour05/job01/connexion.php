@@ -10,6 +10,7 @@
             <span class="err-msg">err</span>
 
             <button type="submit" id="connexion" class="btn">connexion</button>
+            <p class="box-msg">voulez-vous inscrire <a href="inscription.php">click</a></p>
         </form>
     </div>
 
