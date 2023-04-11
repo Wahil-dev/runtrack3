@@ -1,5 +1,4 @@
 const connexionForm = document.querySelector("#connexionForm");
-//const inscriptionForm = document.querySelector("#inscriptionForm");
 
 
 //________________________ Connexion Form

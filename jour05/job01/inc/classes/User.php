@@ -171,7 +171,7 @@
             return null;
         }
 
-        private static function emailExist($email) {
+        public static function emailExist($email) {
             global $db;
             $sql = "SELECT * FROM ". self::TABLE_NAME ." WHERE email = ?";
             $req = $db->prepare($sql);
