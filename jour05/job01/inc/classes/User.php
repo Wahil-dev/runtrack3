@@ -21,7 +21,6 @@
                 if(!is_null($user_info)) {
                     $this->user_info = $user_info;
                     $this->isConnected = true;
-                    var_dump("user trouver !");
                 } else {
                     $this->isConnected = false;
                     var_dump("user n'est pas trouver !");
@@ -186,23 +185,3 @@
     }
 
     $user = new User();
-
-    $email = "s@gmail.com";
-    $password = "bvb";
-    $nom = "bvb";
-    $prenom = "bvbbvb";
-    //unset($_SESSION["id"]);
-    //var_dump($_SESSION);
-    //$user->connect($email, $password);
-    //$user->setUserName("chettouf");
-
-    //var_dump($user->register($nom, $prenom, $email, $password));
-
-    if($user->isConnected()) {
-        //$user->disconnect();
-        //$user->delete();
-        //var_dump($user->getAllInfo());
-        //$user->setEmail("s@gmail.com");
-    } else {
-        //var_dump("vous etez pas connecter");
-    }

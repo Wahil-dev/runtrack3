@@ -5,7 +5,7 @@
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         $jsonData = [];
         $email = $password = "";
-        $emaiErr = $passwordErr = "";
+        $emailErr = $passwordErr = "";
         $loginResponse = "";
     
         //__________________ Email vérification
@@ -13,10 +13,10 @@
             if(Auth::process_input($_POST["email"])) {
                 $email = Auth::process_input($_POST["email"]);
             } else {
-                $emaiErr = "entrer un bon email !";
+                $emailErr = "entrer un bon email !";
             }
         } else {
-            $emaiErr = "email obligatoire !";
+            $emailErr = "email obligatoire !";
         }
     
         //__________________ Password vérification
@@ -31,9 +31,9 @@
         }
     
         //__________________ Essay de connexion
-        if(empty($emaiErr) && empty($passwordErr)) {
+        if(empty($emailErr) && empty($passwordErr)) {
             if($user->connect($email, $password)) {
-                $loginResponse = "connecter réussi";
+                $loginResponse = "connexion réussie";
             } else {
                 $loginResponse = "information entrer ne trouve pas dans notre base de donnes";
             }
@@ -41,10 +41,7 @@
                 "loginResponse" => $loginResponse
             ];
         } else {
-            $jsonData[] = (object) [
-                "emaiErr" => $emaiErr,
-                "passwordErr" => $passwordErr,
-            ];
+            array_push($jsonData, ["emailErr" => $emailErr, "passwordErr" => $passwordErr]);
         }
     
         echo json_encode($jsonData);
