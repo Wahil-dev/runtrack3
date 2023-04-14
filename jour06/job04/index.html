@@ -1,0 +1,39 @@
+<!-- html code  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>styles</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header flex-r">
+        <!-- creer un humbugger -->
+        <div id="humbugger" class="humbugger flex-c">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <ul class="menu flex-r">
+            <li><a href="#">Acceuil</a></li>
+            <li><a href="#">Présentation</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section class="section"></section>
+    <section class="section"></section>
+    <section class="section"></section>
+    <section class="section"></section>
+
+    <script>
+        const humbugger = document.getElementById('humbugger');
+        const menu = document.querySelector('.menu');
+        humbugger.addEventListener('click', () => {
+            menu.classList.toggle('show');
+        });
+        
+    </script>
+</body>
+</html>
