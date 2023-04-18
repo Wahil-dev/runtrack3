@@ -18,6 +18,10 @@
     border: none;
 }
 
+.active {
+    background-color: #f1f1f1;
+}
+
 
 @media screen and (max-width: 776px) {
     .row-1 {
