@@ -1,0 +1,40 @@
+.fond {
+    background-color: rgba(128, 128, 128, 0.468);
+}
+
+.text {
+    line-height: 1.8;
+}
+
+.progress-box {
+    width: 50%;
+}
+
+.progress-box .progress {
+    height: 15px;
+}
+
+.card {
+    border: none;
+}
+
+
+@media screen and (max-width: 776px) {
+    .row-1 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .col {
+        width: 100%;
+    }
+
+    .col-form {
+        width: 100%;
+    }
+
+    .col-special {
+        width: 100%;
+        padding: 0;
+    }
+}
