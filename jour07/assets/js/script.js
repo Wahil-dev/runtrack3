@@ -30,6 +30,9 @@ rebootBbutton.addEventListener('click', function () {
     jumbotron.textContent = citation;
 });
 
+// Je recupere le nombre de page
+const numberOfPage = citations.length;
+
 pagination.addEventListener('click', function (e) {
     e.preventDefault();
 
@@ -47,15 +50,16 @@ pagination.addEventListener('click', function (e) {
         if (page === 'previous') {
             // On récupère le numéro de la page active
             let page = activePage.dataset.citation;
-            console.log(page)
+
             // On récupère la page précédente
             let previousPage = activePage.parentElement.previousElementSibling;
 
             // Si la page active est la premiere page on passe à la dernière page
             if (page === '0') {
-                page = citations.length;
-                console.log(page);
-                previousPage = pagination.children[page];
+                page = citations.length-1;
+                previousPage = pagination.children[page+1];
+            } else {
+                page--;
             }
 
             // On supprime la classe active de la page active
@@ -75,20 +79,26 @@ pagination.addEventListener('click', function (e) {
             // On récupère la page suivante
             let nextPage = activePage.parentElement.nextElementSibling;
 
+            // Transforme la page en nombre
+            page = Number(page);
+
             // Si la page active est la dernière page on passe à la première page
             if(page == citations.length-1) {
-                page = 1;
-                nextPage = pagination.children[page];
-            }
+                page = 0;
+                nextPage = pagination.children[1];
+            } else {
+                page++;
+            }   
 
             // On supprime la classe active de la page active
             activePage.parentElement.classList.remove('active');
-
+            
             // On ajoute la classe active sur la page suivante
             nextPage.classList.add('active');
 
             // On affiche la citation dans le jumbotron
             jumbotron.textContent = citations[page];
+
         
         } else {
             // si la page clicker est la page active on ne fait rien
