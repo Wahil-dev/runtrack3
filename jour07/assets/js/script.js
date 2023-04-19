@@ -33,6 +33,8 @@ rebootBbutton.addEventListener('click', function () {
 // Je recupere le nombre de page
 const numberOfPage = citations.length;
 
+
+// Pagination tache
 pagination.addEventListener('click', function (e) {
     e.preventDefault();
 
@@ -98,8 +100,6 @@ pagination.addEventListener('click', function (e) {
 
             // On affiche la citation dans le jumbotron
             jumbotron.textContent = citations[page];
-
-        
         } else {
             // si la page clicker est la page active on ne fait rien
             if (target.classList.contains('active')) return;
@@ -113,10 +113,23 @@ pagination.addEventListener('click', function (e) {
             // On ajoute la classe active sur la page cliquée
             target.parentElement.classList.add('active');
     
-    
-    
             // On affiche la citation dans le jumbotron
             jumbotron.textContent = citations[page];
         }
     } 
 });
+
+// Rendre actif l'element cliquer de list-group
+const listGroup = document.querySelector('.list-group');
+listGroup.addEventListener('click', function (e) {
+    const target = e.target;
+
+    // Recuperer l'element actif
+    const activeElement = listGroup.querySelector('.active');
+
+    // Supprimer la classe active de l'element actif
+    activeElement.classList.remove('active');
+
+    // Ajouter la classe active sur l'element cliquer
+    target.classList.add('active');
+})
