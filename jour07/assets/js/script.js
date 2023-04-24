@@ -133,3 +133,61 @@ listGroup.addEventListener('click', function (e) {
     // Ajouter la classe active sur l'element cliquer
     target.classList.add('active');
 })
+
+// Progress bar tache
+const progressBar = document.querySelector('.progress-bar');
+const progress = document.querySelector('.progress');
+const progressValue = document.querySelector('.progress-value');
+const progressButton = document.querySelectorAll('.controls');
+
+
+// Fonction pour mettre a jour la barre de progression
+function updateProgress(button) {
+    // Recuperer la dataset-controls des buttons
+    const btn = button.dataset.controls;
+    const value = parseInt(progress.getAttribute('aria-valuenow'));
+    // Vérifier si la barre de progression est entre 0 et 100
+    if(btn == "progresser") {
+        if(value < 100) {
+            // Augmenter la barre de progression de 10%
+            progressBar.style.width = `${value + 10}%`;
+
+            // mettre a jour la valeur de la barre de progression
+            progress.setAttribute('aria-valuenow', `${value + 10}%`);
+        }
+    } else if(btn == "regresser") {
+        if(value > 0) {
+            // Diminuer la barre de progression de 10%
+            progressBar.style.width = `${value - 10}%`;
+
+            // mettre a jour la valeur de la barre de progression
+            progress.setAttribute('aria-valuenow', `${value - 10}%`);
+        }
+    }
+}
+
+// progressButton.addEventListener('click', () => {
+//     // Recuperer la valeur de la barre de progression
+//     const value = progressBar.getAttribute('aria-valuenow');
+
+//     // Verifier si la barre de progression est a 100%
+//     if (value == 100) {
+//         // Remettre la barre de progression a 0%
+//         progressBar.style.width = '0%';
+//         progressBar.setAttribute('aria-valuenow', `0%`);
+//         progressValue.textContent = '0%';
+//     } else {
+//         // Augmenter la barre de progression de 10%
+//         progressBar.style.width = `${value + 10}%`;
+//         progressBar.setAttribute('aria-valuenow', value + 10);
+//         progressValue.textContent = `${value + 10}%`;
+//     }
+// });
+
+progressButton.forEach(button => {
+    button.addEventListener('click', () => {
+        updateProgress(button);
+        console.log(button);
+        console.log(progressBar.style.width);
+    });
+});

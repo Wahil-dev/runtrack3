@@ -6,6 +6,10 @@
     line-height: 1.8;
 }
 
+.progress {
+    width: 90%;
+}
+
 .progress-box {
     width: 50%;
 }
@@ -24,6 +28,16 @@
 
 .list-group-item {
     cursor: pointer;
+}
+
+.box {
+    align-items: center;
+    justify-content: space-around;
+    gap: 5px;
+}
+
+.box span[type="button"] {
+    padding-bottom: 3px;
 }
 
 @media screen and (max-width: 776px) {

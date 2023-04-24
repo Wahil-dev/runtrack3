@@ -126,11 +126,16 @@
             <div class="my-5">
                 <div class="progress-box mx-auto">
                     <p style="margin-bottom: 8px;" class="text-lg-end">Instalation IA 9000</p>
-                    <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
-                        aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning"
-                            style="width: 75%">
+                    <!-- mettre deux buttons un avant la bar et l'autre a la fin -->
+                    <div class="box d-flex">
+                        <span type="button" class="controls" data-controls="regresser"><<</span>
+                        <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="10"
+                            aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning"
+                                style="width: 10%">
+                            </div>
                         </div>
+                        <span type="button" class="controls" data-controls="progresser">>></span>
                     </div>
                 </div>
             </div>
