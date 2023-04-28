@@ -1,6 +1,9 @@
 const rebootBbutton = document.querySelector('#reboot-button');
 const jumbotron = document.querySelector('#jumbotron');
 const pagination = document.querySelector('.pagination');
+const modal_2 = document.querySelector('.modal-2');
+const contentModal_2 = modal_2.querySelector('.content');
+const closeModel = document.querySelector('#closeModel');
 
 // Liste de citations tirées du film "Blade Runner"
 const citations = [
@@ -166,28 +169,75 @@ function updateProgress(button) {
     }
 }
 
-// progressButton.addEventListener('click', () => {
-//     // Recuperer la valeur de la barre de progression
-//     const value = progressBar.getAttribute('aria-valuenow');
-
-//     // Verifier si la barre de progression est a 100%
-//     if (value == 100) {
-//         // Remettre la barre de progression a 0%
-//         progressBar.style.width = '0%';
-//         progressBar.setAttribute('aria-valuenow', `0%`);
-//         progressValue.textContent = '0%';
-//     } else {
-//         // Augmenter la barre de progression de 10%
-//         progressBar.style.width = `${value + 10}%`;
-//         progressBar.setAttribute('aria-valuenow', value + 10);
-//         progressValue.textContent = `${value + 10}%`;
-//     }
-// });
-
 progressButton.forEach(button => {
     button.addEventListener('click', () => {
         updateProgress(button);
-        console.log(button);
-        console.log(progressBar.style.width);
     });
 });
+
+
+// Afficher une modal qui recapitule les informations des champs du formulaire qui a une class form-1 quand on click en ordre sur les bouton suivant D, J, C
+const form1 = document.querySelector('.form-1');
+
+// button ordre array
+const buttonOrder = ['D', 'J', 'C'];
+
+// Verifier les button clicker
+const buttonClicker = [];
+window.addEventListener("keydown", function (e) {
+    // Si on click que sur les lettres alphabetique
+    if(e.keyCode > 65 && e.keyCode < 90) buttonClicker.push(e.key);
+
+    // Remettre le tableau buttonClicker a zero si on click sur la touche echap
+    if(e.keyCode == 27) buttonClicker.length = 0;
+    
+    // Verifier si les button clicker sont dans le bon ordre
+    if(buttonClicker.length == buttonOrder.length) {
+        // Verifier si les button clicker sont dans le bon ordre
+        if(buttonClicker.every((value, index) => value == buttonOrder[index])) {
+            // Afficher la modal
+            afficherModal();
+
+        } else {
+            // Remettre le tableau buttonClicker a zero
+            buttonClicker.length = 0;
+        }
+    }
+})
+
+// Casher le modal-2
+closeModel.addEventListener('click', () => {
+    modal_2.style.display = "none";
+    // On arrete la possibilité de scroll
+    document.body.style.overflow = "visible";
+});
+
+
+// récuperer les informations du formulaire fprm1 et les afficher dans la modal-2
+const getForm1 = () => {
+    const inputs = form1.querySelectorAll('input');
+
+    // Supprimer lecontent de contentModal_2
+    contentModal_2.innerHTML = "";
+
+    // parcourir les inputs
+    inputs.forEach(input => {
+        console.log(input.value);
+        // creation d'un element p
+        const field = document.createElement('p');
+
+        // Ajouter le name de l'input dans le textContent
+        // afficher la valeur de l'input s'il n'est pas vide sinon afficher "Field vide"
+        field.textContent = input.name + " : " + (input.value == "" ? "Field vide" : input.value);
+
+        contentModal_2.appendChild(field);
+    });
+};
+
+const afficherModal = () => {
+    getForm1();
+    modal_2.style.display = "flex";
+    buttonClicker.length = 0;
+    // On arrete la possibilité de scroll
+    document.body.style.overflow = "hidden";
+};
