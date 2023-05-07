@@ -69,11 +69,11 @@
     height: 100vh;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.5);
-    transition: .3;
-    -webkit-transition: .3;
-    -moz-transition: .3;
-    -ms-transition: .3;
-    -o-transition: .3;
+    transition: .1;
+    -webkit-transition: .1;
+    -moz-transition: .1;
+    -ms-transition: .1;
+    -o-transition: .1;
 }
 
 .modal-2 .content-modal {
