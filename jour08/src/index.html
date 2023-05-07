@@ -9,9 +9,9 @@
 
 <body lang="fr-FR">
     <div id="app">
-        <header id="header">
+        <header id="header" class="">
             <nav>
-                <ul class="menu">
+                <ul class="">
                     <li><a href="#">Accueil</a></li>
                     <li><a href="#">Inscription</a></li>
                     <li><a href="#">Connexion</a></li>
@@ -23,13 +23,59 @@
         <main>
             <section>
                 <form method="post">
-                    <input type="text" name="nom" id="nom" placeholder="Nom">
-                    <input type="text" name="prenom" id="prenom" placeholder="Prenom">
-                    <input type="email" name="email" id="email" placeholder="Email">
-                    <input type="text" name="address" id="address" placeholder="address">
-                    <input type="password" name="password" id="password" placeholder="Mot de passe">
-                    <input type="password" name="password2" id="password2" placeholder="Confirmer le mot de passe">
-                    <button type="submit" id="Inscription">S'inscrire</button>
+                    <fieldset>
+                        <legend>Civilité :</legend>
+                        <label for="civilite-home">
+                            <input type="radio" name="civilite" id="civilite-home" value="home">
+                            Homme
+                        </label>
+
+                        <label for="civilite-femme">
+                            <input type="radio" name="civilite" id="civilite-femme" value="femme">
+                            Femme
+                        </label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Informations personnelles :</legend>
+                        <input type="text" name="nom" id="nom" placeholder="Nom">
+
+                        <input type="text" name="prenom" id="prenom" placeholder="Prenom">
+
+                        <input type="email" name="email" id="email" placeholder="Email">
+
+                        <input type="text" name="address" id="address" placeholder="address">
+
+                        <input type="password" name="password" id="password" placeholder="Mot de passe">
+
+                        <input type="password" name="password2" id="password2" placeholder="Confirmer le mot de passe">
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Passions :</legend>
+
+                        <label for="informatique">
+                            <input type="checkbox" name="informatique" id="informatique" value="informatique">
+                            Informatique
+                        </label>
+
+                        <label for="voyages">
+                            <input type="checkbox" name="voyages" id="voyages" value="voyages">
+                            Voyages
+                        </lab>
+
+                        <label for="sport">
+                            <input type="checkbox" name="sport" id="sport" value="sport">
+                            sport
+                        </label>
+
+                        <label for="lecture">
+                            <input type="checkbox" name="lecture" id="lecture" value="lecture">
+                            Lecture
+                        </label>
+                    </fieldset>
+
+                    <button type="submit" id="valider">Valider</button>
                 </form>
             </section>
         </main>
@@ -44,6 +90,5 @@
             </ul>
         </footer>
     </div>
-    <script src="/dist/output.js"></script>
 </body>
 </html>
