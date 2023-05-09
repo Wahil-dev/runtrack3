@@ -97,14 +97,41 @@
             </section>
         </main>
 
-        <footer id="footer">
-            <p>© 2021 - Tous droits réservés</p>
-            <ul class="">
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Inscription</a></li>
-                <li><a href="#">Connexion</a></li>
-                <li><a href="#">Rechercher</a></li>
-            </ul>
+        <footer id="footer" class="flex justify-around items-center absolute bottom-0 left-0 w-full h-84 md:h-40 py-5 bg-sky-950 text-white ">
+            <div class="container space-y-5 max-md:flex-col justify-around items-start h-full md:flex md:space-y-0">
+                <div class="flex justify-center">
+                    <div class="flex-col space-y-4 w-56 text-center">
+                        <p>© 2021 - Tous droits réservés</p>
+                        <div class="">
+                            <img class="text-white" src="/dist/imgs/tailwindcss-logotype-white.png" alt="tailwind-css-logo-vector">
+                        </div>
+                        <ul class="flex space-x-3 justify-center">
+                            <a href=""><i class="text-xl ri-facebook-box-fill"></i></a>
+                            <a href=""><i class="text-xl ri-instagram-fill"></i></a>
+                            <a href=""><i class="text-xl ri-linkedin-box-fill"></i></a>
+                            <a href=""><i class="text-xl ri-github-fill"></i></a>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flex justify-center">
+                    <ul class="flex space-x-3 md:flex-col md:space-x-0">
+                        <a class="hover:text-orange-400" href="#">Accueil</a>
+                        <a class="hover:text-orange-400" href="#">Inscription</a>
+                        <a class="hover:text-orange-400" href="#">Connexion</a>
+                        <a class="hover:text-orange-400" href="#">Rechercher</a>
+                    </ul>
+                </div>
+
+                <form class="flex-col justify-center space-y-2">
+                    <div class="flex justify-center">
+                        <input type="search" placeholder="Html" class="block w-1/2 border-none outline-none py-1 px-3 rounded-full text-zinc-950 md:w-full">
+                    </div>
+                    <div class="flex justify-center md:justify-end">
+                        <button class=" bg-orange-500 py-2 px-3 rounded-full hover:bg-white hover:text-orange-400 leading-none" href="#">Rechercher</button>
+                    </div>
+                </form>
+            </div>
         </footer>
     </div>
     <script src="/dist/js/script.js"></script>
