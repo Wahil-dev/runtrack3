@@ -3,21 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/dist/output.css" rel="stylesheet">
+    <link href="/dist/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <title>Apprendre tailwind</title>
 </head>
 
 <body lang="fr-FR">
     <div id="app">
-        <header id="header" class="">
-            <nav>
-                <ul class="">
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Inscription</a></li>
-                    <li><a href="#">Connexion</a></li>
-                    <li><a href="#">Rechercher</a></li>
+        <header id="header" class="flex items-center bg-sky-950 text-white px-3 h-16 relative">
+            <nav class="container mx-auto flex justify-between">
+                <div class="flex items-center">
+                    <p class="font-bold text-xl md:text-2xl">Wahil Chettouf</p>
+                </div>
+
+                <ul class="hidden md:flex items-center space-x-5">
+                    <a class="hover:text-orange-400" href="#">Accueil</a>
+                    <a class="hover:text-orange-400" href="#">Inscription</a>
+                    <a class="hover:text-orange-400" href="#">Connexion</a>
+                    <a class="bg-orange-500 p-3 rounded-full hover:bg-white hover:text-orange-400 leading-none" href="#">Rechercher</a>
                 </ul>
+                <button id="mobile-btn" class="md:hidden">
+                    <i class="ri-menu-line text-3xl"></i>
+                </button>
             </nav>
+            <!-- barre de navigation pour les smartphone -->
+            <div class="flex hidden md:hidden items-center" id="mobile-menu">
+                <ul class="flex-col bg-sky-700 absolute top-full right-10 w-64">
+                    <li><a class="block px-4 py-2 hover:text-orange-400" href="#">Accueil</a></li>
+                    <li><a class="block px-4 py-2 hover:text-orange-400" href="#">Inscription</a></li>
+                    <li><a class="block px-4 py-2 hover:text-orange-400" href="#">Connexion</a></li>
+                    <li><a class="block px-4 py-2 hover:text-orange-400" href="#">Rechercher</a></li>
+                </ul>
+            </div>
         </header>
 
         <main>
@@ -62,17 +79,17 @@
                         <label for="voyages">
                             <input type="checkbox" name="voyages" id="voyages" value="voyages">
                             Voyages
-                        </lab>
+                            </lab>
 
-                        <label for="sport">
-                            <input type="checkbox" name="sport" id="sport" value="sport">
-                            sport
-                        </label>
+                            <label for="sport">
+                                <input type="checkbox" name="sport" id="sport" value="sport">
+                                sport
+                            </label>
 
-                        <label for="lecture">
-                            <input type="checkbox" name="lecture" id="lecture" value="lecture">
-                            Lecture
-                        </label>
+                            <label for="lecture">
+                                <input type="checkbox" name="lecture" id="lecture" value="lecture">
+                                Lecture
+                            </label>
                     </fieldset>
 
                     <button type="submit" id="valider">Valider</button>
@@ -90,5 +107,7 @@
             </ul>
         </footer>
     </div>
+    <script src="/dist/js/script.js"></script>
 </body>
+
 </html>
