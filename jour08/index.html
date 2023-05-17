@@ -9,7 +9,7 @@
 </head>
 
 <body lang="fr-FR">
-    <div id="app">
+    <div id="app" class="flex-col space-y-6 min-h-screen">
         <header id="header" class="flex items-center bg-sky-950 text-white px-3 h-16 relative">
             <nav class="container mx-auto flex justify-between">
                 <div class="flex items-center">
@@ -38,10 +38,10 @@
         </header>
 
         <main>
-            <section>
-                <form method="post">
+            <section class="container mx-auto py-6">
+                <form method="post" class="w-11/12 md:w-6/12 mx-auto p-6 bg-slate-300">
                     <fieldset>
-                        <legend>Civilité :</legend>
+                        <legend class="text-lg py-2">Civilité :</legend>
                         <label for="civilite-home">
                             <input type="radio" name="civilite" id="civilite-home" value="home">
                             Homme
@@ -53,51 +53,53 @@
                         </label>
                     </fieldset>
 
-                    <fieldset>
-                        <legend>Informations personnelles :</legend>
-                        <input type="text" name="nom" id="nom" placeholder="Nom">
+                    <fieldset class="my-10 flex-col space-y-4">
+                        <legend class="text-lg">Informations personnelles :</legend>
 
-                        <input type="text" name="prenom" id="prenom" placeholder="Prenom">
+                        <input class="w-full p-2 outline-none border-none" type="text" name="nom" id="nom" placeholder="Nom">
 
-                        <input type="email" name="email" id="email" placeholder="Email">
+                        <input class="w-full p-2 outline-none border-none" type="text" name="prenom" id="prenom" placeholder="Prenom">
 
-                        <input type="text" name="address" id="address" placeholder="address">
+                        <input class="w-full p-2 outline-none border-none" type="email" name="email" id="email" placeholder="Email">
 
-                        <input type="password" name="password" id="password" placeholder="Mot de passe">
+                        <input class="w-full p-2 outline-none border-none" type="text" name="address" id="address" placeholder="address">
 
-                        <input type="password" name="password2" id="password2" placeholder="Confirmer le mot de passe">
+                        <input class="w-full p-2 outline-none border-none" type="password" name="password" id="password" placeholder="Mot de passe">
+
+                        <input class="w-full p-2 outline-none border-none" type="password" name="password2" id="password2" placeholder="Confirmer le mot de passe">
                     </fieldset>
 
-                    <fieldset>
-                        <legend>Passions :</legend>
-
-                        <label for="informatique">
-                            <input type="checkbox" name="informatique" id="informatique" value="informatique">
-                            Informatique
-                        </label>
-
-                        <label for="voyages">
-                            <input type="checkbox" name="voyages" id="voyages" value="voyages">
-                            Voyages
-                            </lab>
-
+                    <fieldset class="">
+                        <legend class="text-lg">Passions :</legend>
+                        <div class="py-2">
+                            <label for="informatique">
+                                <input type="checkbox" name="informatique" id="informatique" value="informatique">
+                                Informatique
+                            </label>
+    
+                            <label for="voyages">
+                                <input type="checkbox" name="voyages" id="voyages" value="voyages">
+                                Voyages
+                            </label>
+    
                             <label for="sport">
                                 <input type="checkbox" name="sport" id="sport" value="sport">
                                 sport
                             </label>
-
+    
                             <label for="lecture">
                                 <input type="checkbox" name="lecture" id="lecture" value="lecture">
                                 Lecture
                             </label>
+                        </div>
                     </fieldset>
 
-                    <button type="submit" id="valider">Valider</button>
+                    <button type="submit" id="valider" class="w-full py-3 px-5 my-3 bg-sky-950 text-white hover:bg-emerald-900">Valider</button>
                 </form>
             </section>
         </main>
 
-        <footer id="footer" class="flex justify-around items-center absolute bottom-0 left-0 w-full h-84 md:h-40 py-5 bg-sky-950 text-white ">
+        <footer id="footer" class="flex justify-around items-center w-full h-84 md:h-40 py-5 bg-sky-950 text-white ">
             <div class="container space-y-5 max-md:flex-col justify-around items-start h-full md:flex md:space-y-0">
                 <div class="flex justify-center">
                     <div class="flex-col space-y-4 w-56 text-center">
